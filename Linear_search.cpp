@@ -2,7 +2,7 @@
 using namespace std;
 int main()
 {
-    int n,i,element,flag=0;
+    int n,i,element,pos=0;
     int a[20];
     cout<<"Enter the number of elements"<<endl;
     cin>>n;
@@ -18,20 +18,21 @@ int main()
     }
     cout<<"\nEnter the element to search"<<endl;
     cin>>element;
- for(i=0;i<n;i++)
-{
-    if(a[i]==element)
+    pos=-1;
+    for ( i = 0; i < n; i++)
     {
-    flag=element;
-    cout<<"\nElement found";
-    break;
+        if(element==a[i])
+        {
+            pos=i;
+            break;
+        }
+        if(pos>=0)
+        cout<<"The element"<<element<<"is present at position"<<pos<<endl;
+        else
+        cout<<"The search element"<<element<<"is not present"<<endl;
     }
-    else
-     cout<<"Element not found";
-} 
- 
-  
- 
-    return 0;
+    
+
+   return 0;
        
 }
